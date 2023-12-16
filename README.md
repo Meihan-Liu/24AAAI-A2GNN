@@ -1,7 +1,7 @@
 # Rethinking Propagation for Unsupervised Graph Domain Adaptation
 This is the source code of AAAI-2024 paper "[Rethinking Propagation for Unsupervised Graph Domain Adaptation]()" (A2GNN).
 
-![github.pdf](https://github.com/Meihan-Liu/24AAAI-A2GNN/files/13691907/github.pdf)
+![github.pdf](https://github.com/Meihan-Liu/24AAAI-A2GNN/files/github.pdf)
 
 # Requirements
 This code requires the following:
