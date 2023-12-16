@@ -1,0 +1,38 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.nn import Sequential, Linear
+
+from layers import GCNConv
+
+
+class Model(torch.nn.Module):
+    
+    def __init__(self, args):
+        super(Model, self).__init__()
+        self.args = args
+        self.num_features = args.num_features
+        self.nhid = args.nhid
+        self.num_classes = args.num_classes
+        self.dropout_ratio = args.dropout_ratio
+
+        self.conv1 = GCNConv(self.num_features, self.nhid)
+        self.conv2 = GCNConv(self.nhid, self.nhid)
+        self.cls = GCNConv(self.nhid, self.num_classes)
+
+    def forward(self, x, edge_index, conv_time=30):
+        x = self.feat_bottleneck(x, edge_index, conv_time)
+        x = self.feat_classifier(x, edge_index)
+
+        return x
+    
+    def feat_bottleneck(self, x, edge_index, conv_time=30):
+        x = self.conv1(x, edge_index, conv_time)
+        x = F.relu(x)
+
+        return x
+    
+    def feat_classifier(self, x, edge_index, conv_time=1):
+        x = self.cls(x, edge_index, conv_time)
+        
+        return x
