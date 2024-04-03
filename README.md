@@ -13,9 +13,18 @@ This code requires the following:
 * numpy==1.19.2
 * scikit-learn==0.24.2
 
+# Dataset
+Datasets used in the paper are all publicly available datasets. You can find [Twitch](https://github.com/benedekrozemberczki/datasets#twitch-social-networks) and [Citation](https://github.com/yuntaodu/ASN/tree/main/data) via the links.
+
 # Cite
-If you compare with, build on, or use aspects of A2GNN framework, please cite the following:
+If you compare with, build on, or use aspects of A2GNN framework, please consider citing the following paper:
 
 ```
-unrealse
+@article{liu2024rethinking,
+  title={Rethinking Propagation for Unsupervised Graph Domain Adaptation},
+  author={Liu, Meihan and Fang, Zeyu and Zhang, Zhen and Gu, Ming and Zhou, Sheng and Wang, Xin and Bu, Jiajun},
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2024},
+  pages={13963-13971}
+}
 ```
